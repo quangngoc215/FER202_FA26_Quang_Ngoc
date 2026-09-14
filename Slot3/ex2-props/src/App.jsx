@@ -7,12 +7,14 @@ function App() {
       <h1>Bài tập Props - ReactJS</h1>
       
       <ProductInfo
+        image="image/1.jpg"
         name="iPhone 15 Pro Max"
         price={34990000}
         tag="Điện thoại"
       />
 
       <ProductInfo
+        image="image/2.jpg"     
         name="Samsung Galaxy S24 Ultra"
         price={31990000}
         tag="Điện thoại"
