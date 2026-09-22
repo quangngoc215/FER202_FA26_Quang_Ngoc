@@ -1,38 +1,29 @@
-import StudentCard from './components/StudentCard';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ProductCard from './components/ProductCard';
 
-const students = [
-  {
-    id: 'SE1701',
-    name: 'Nguyễn Văn An',
-    major: 'Software Engineering',
-    gpa: 8.5,
-    avatar: 'https://i.pravatar.cc/200?img=12',
-    contact: { email: 'an.nv@fpt.edu.vn', phone: '0901 234 567' },
-  },
-  {
-    id: 'SE1702',
-    name: 'Trần Thị Bình',
-    major: 'Artificial Intelligence',
-    gpa: 9.1,
-    avatar: 'https://i.pravatar.cc/200?img=32',
-    contact: { email: 'binh.tt@fpt.edu.vn', phone: '0902 345 678' },
-  },
-  {
-    id: 'SE1703',
-    name: 'Lê Văn Cường',
-    major: 'Digital Marketing',
-    gpa: 7.8,
-    avatar: 'https://i.pravatar.cc/200?img=45',
-    contact: { email: 'cuong.lv@fpt.edu.vn', phone: '0903 456 789' },
-  },
-];
+const productA = {
+  id: 1,
+  name: 'Tai nghe Bluetooth',
+  price: 590000,
+  image: 'https://picsum.photos/seed/headphone/300/200',
+  rating: { rate: 4.5, count: 120 },
+  category: { name: 'Âm thanh' },
+};
+const productB = { id: 2, name: 'Chuột không dây', price: 0 };
+const productC = { id: 3 };
 
 function App() {
+  const list = [productA, productB, productC];
   return (
-    <div className="container my-4 d-flex gap-3 flex-wrap">
-      {students.map((s) => (
-        <StudentCard key={s.id} student={s} />
-      ))}
+    <div className="container my-4">
+      <Row className="g-4">
+        {list.map((p) => (
+          <Col md={4} key={p.id}>
+            <ProductCard product={p} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
