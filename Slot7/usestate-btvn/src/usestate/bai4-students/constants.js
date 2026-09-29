@@ -1,0 +1,1 @@
+export const CITIES = ['Hà Nội', 'Đà Nẵng', 'TP.HCM', 'Cần Thơ'];
