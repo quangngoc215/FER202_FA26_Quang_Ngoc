@@ -1,0 +1,18 @@
+export const products = [
+  { id: 1, name: 'Tai nghe Bluetooth', price: 590000, discount: 10, inStock: true,
+    category: { name: 'Phụ kiện' }, rating: { rate: 4.5 } },
+  { id: 2, name: 'Chuột không dây', price: 250000, discount: 0, inStock: true,
+    category: { name: 'Phụ kiện' }, rating: { rate: 4.2 } },
+  { id: 3, name: 'Bàn phím cơ', price: 890000, discount: 5, inStock: false,
+    category: { name: 'Phụ kiện' }, rating: { rate: 4.7 } },
+  { id: 4, name: 'Màn hình 24 inch', price: 3490000, discount: 15, inStock: true,
+    category: { name: 'Màn hình' }, rating: { rate: 4.8 } },
+  { id: 5, name: 'Webcam Full HD', price: 720000, discount: 0, inStock: true,
+    category: { name: 'Phụ kiện' }, rating: { rate: 4.0 } },
+  { id: 6, name: 'Laptop FPT 14 inch', price: 15900000, discount: 10, inStock: true,
+    category: { name: 'Laptop' }, rating: { rate: 4.6 } },
+  { id: 7, name: 'Loa Bluetooth', price: 450000, discount: 0, inStock: false,
+    category: { name: 'Âm thanh' }, rating: { rate: 4.1 } },
+  { id: 8, name: 'USB 64GB', price: 150000, discount: 0, inStock: true,
+    category: { name: 'Phụ kiện' }, rating: { rate: 4.3 } },
+];
