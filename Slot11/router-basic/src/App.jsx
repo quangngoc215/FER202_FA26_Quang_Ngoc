@@ -22,7 +22,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="text-center text-muted py-3 border-top">
-        © 2026 – Portfolio của tôi
+        2026 – Portfolio của tôi
       </footer>
     </>
   )
