@@ -1,22 +1,21 @@
 import { Card, Button, Badge } from 'react-bootstrap'
 
 function MyProduct({ product }) {
-  const { name, description, price, discount, instock, rating, category } = product
+  const { name, description, price, discount, instock, rating, category, image } = product
 
-  // Tính giá sau khi giảm
   const finalPrice = price - (price * discount) / 100
 
-  // Format số tiền theo VNĐ
   const formatPrice = (value) =>
     value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
 
   return (
     <Card className="h-100 shadow-sm">
-      {/* Ảnh placeholder */}
+      {/* Ảnh sản phẩm — lấy từ product.image */}
       <Card.Img
         variant="top"
-        src={`https://picsum.photos/seed/${product.id}/400/250`}
+        src={image}
         alt={name}
+        style={{ height: '200px', objectFit: 'cover' }}
       />
 
       <Card.Body className="d-flex flex-column">
@@ -59,7 +58,7 @@ function MyProduct({ product }) {
           )}
         </div>
 
-        {/* Button thêm vào giỏ — chỉ hiện khi còn hàng VÀ có giảm giá */}
+        {/* Button thêm vào giỏ */}
         {instock && discount > 0 ? (
           <Button variant="primary" className="w-100">
             Thêm vào giỏ
