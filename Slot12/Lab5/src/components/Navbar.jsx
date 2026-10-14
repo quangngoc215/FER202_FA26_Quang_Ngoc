@@ -13,6 +13,7 @@ function Navbar() {
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/new">New</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/products">Sản phẩm</Nav.Link>
           </Nav>
         </BSNavbar.Collapse>
       </Container>
