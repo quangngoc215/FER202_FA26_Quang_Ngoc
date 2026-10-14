@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import MyCarousel from './components/MyCarousel'
 import Home from './pages/Home'
 import About from './pages/About'
 import New from './pages/New'
@@ -12,6 +13,8 @@ function App() {
     <BrowserRouter>
       <div className="d-flex flex-column min-vh-100">
         <Navbar />
+
+        <MyCarousel />
 
         <Container className="mt-4 flex-grow-1">
           <Routes>
