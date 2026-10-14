@@ -7,7 +7,8 @@ const products = [
     discount: 10,
     instock: true,
     rating: 4.8,
-    category: 'Điện thoại'
+    category: 'Điện thoại',
+    image: '/images/products/1.jpg'
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const products = [
     discount: 15,
     instock: true,
     rating: 4.7,
-    category: 'Điện thoại'
+    category: 'Điện thoại',
+    image: '/images/products/2.jpg'
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const products = [
     discount: 5,
     instock: true,
     rating: 4.9,
-    category: 'Laptop'
+    category: 'Laptop',
+    image: '/images/products/3.jpg'
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const products = [
     discount: 0,
     instock: true,
     rating: 4.6,
-    category: 'Máy tính bảng'
+    category: 'Máy tính bảng',
+    image: '/images/products/4.jpg'
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const products = [
     discount: 20,
     instock: false,
     rating: 4.5,
-    category: 'Phụ kiện'
+    category: 'Phụ kiện',
+    image: '/images/products/5.jpg'
   },
   {
     id: 6,
@@ -57,7 +62,8 @@ const products = [
     discount: 12,
     instock: true,
     rating: 4.7,
-    category: 'Đồng hồ'
+    category: 'Đồng hồ',
+    image: '/images/products/6.jpg'
   },
   {
     id: 7,
@@ -67,7 +73,8 @@ const products = [
     discount: 25,
     instock: true,
     rating: 4.8,
-    category: 'Phụ kiện'
+    category: 'Phụ kiện',
+    image: '/images/products/7.jpg'
   },
   {
     id: 8,
@@ -77,7 +84,8 @@ const products = [
     discount: 8,
     instock: false,
     rating: 4.4,
-    category: 'Laptop'
+    category: 'Laptop',
+    image: '/images/products/8.jpg'
   },
   {
     id: 9,
@@ -87,7 +95,8 @@ const products = [
     discount: 10,
     instock: true,
     rating: 4.6,
-    category: 'Điện thoại'
+    category: 'Điện thoại',
+    image: '/images/products/9.jpg'
   },
   {
     id: 10,
@@ -97,7 +106,8 @@ const products = [
     discount: 0,
     instock: true,
     rating: 4.9,
-    category: 'Phụ kiện'
+    category: 'Phụ kiện',
+    image: '/images/products/10.jpg'
   }
 ]
 
