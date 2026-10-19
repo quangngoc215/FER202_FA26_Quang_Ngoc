@@ -1,8 +1,11 @@
+import React from 'react';
+import AxiosDemo from './AxiosDemo';
+
 function App() {
   return (
-    <div>
-      <h1>DemoAxios</h1>
-    </div>
+    <React.StrictMode>
+      <AxiosDemo />
+    </React.StrictMode>
   );
 }
 
