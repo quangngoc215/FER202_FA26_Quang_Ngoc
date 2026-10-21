@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import postApi from './api/postApi';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -8,22 +8,17 @@ const CreatePost = () => {
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // Event handler cũng có thể là hàm async
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
     try {
-      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-        title,
-        body,
-        userId: 1,
-      });
+      const response = await postApi.create({ title, body, userId: 1 });
       setResult({ status: response.status, data: response.data });
       setTitle('');
       setBody('');
     } catch (err) {
-      setError(err.message);
+      setError(err.userMessage);
     } finally {
       setSubmitting(false);
     }
@@ -41,7 +36,6 @@ const CreatePost = () => {
           {submitting ? 'Đang gửi...' : 'Tạo bài viết'}
         </button>
       </form>
-
       {error && <div>Error: {error}</div>}
       {result && (
         <div>
