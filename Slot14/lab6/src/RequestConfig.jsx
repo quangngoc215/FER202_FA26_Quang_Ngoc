@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosClient from './api/axiosClient';
 
 const RequestConfig = () => {
   const [info, setInfo] = useState(null);
@@ -8,26 +8,22 @@ const RequestConfig = () => {
   useEffect(() => {
     const fetchWithConfig = async () => {
       try {
-        const response = await axios({
+        const res = await axiosClient({
           method: 'get',
-          url: 'https://jsonplaceholder.typicode.com/posts',
+          url: '/posts',
           params: { _page: 1, _limit: 3 },
-          headers: {
-            Accept: 'application/json',
-            Authorization: 'Bearer demo-token-123',
-          },
+          headers: { Accept: 'application/json', 'X-Client': 'FER202' },
           timeout: 5000,
         });
         setInfo({
-          status: response.status,
-          contentType: response.headers['content-type'],
-          total: response.headers['x-total-count'],
-          data: response.data,
+          status: res.status,
+          duration: res.duration, // do response interceptor tính
+          contentType: res.headers['content-type'],
+          total: res.headers['x-total-count'],
+          data: res.data,
         });
       } catch (err) {
-        if (err.code === 'ECONNABORTED') setError('Request quá thời gian (timeout)');
-        else if (err.response) setError(`Server trả lỗi ${err.response.status}`);
-        else setError(err.message);
+        setError(err.userMessage);
       }
     };
     fetchWithConfig();
@@ -39,7 +35,7 @@ const RequestConfig = () => {
   return (
     <div>
       <h2>Cấu hình request</h2>
-      <p>Status: {info.status}</p>
+      <p>Status: {info.status} · {info.duration} ms</p>
       <p>Content-Type: {info.contentType}</p>
       <p>Tổng số bài viết (x-total-count): {info.total}</p>
       <ul>
