@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Tạo instance axios với cấu hình chung
 const axiosClient = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "http://localhost:3001", // Đã đổi sang json-server
   timeout: 8000,
   headers: {
     "Content-Type": "application/json; charset=UTF-8",

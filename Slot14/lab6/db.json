@@ -1,0 +1,15 @@
+{
+  "posts": [
+    { "id": "1", "userId": 1, "title": "Học JSON Server", "views": 100 },
+    { "id": "2", "userId": 1, "title": "Lập trình ReactJS", "views": 250 }
+  ],
+  "comments": [
+    { "id": "1", "text": "Bài viết hay quá!", "postId": "1" }
+  ],
+  "profile": {
+    "name": "Dev"
+  },
+  "users": [
+    { "id": 1, "name": "Dev User", "email": "dev@example.com" }
+  ]
+}
