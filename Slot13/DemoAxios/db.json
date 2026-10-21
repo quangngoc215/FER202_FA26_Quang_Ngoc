@@ -1,0 +1,9 @@
+{
+  "posts": [
+    { "id": 1, "title": "Bài viết mẫu 1", "body": "Nội dung 1", "userId": 1 }
+  ],
+  "users": [
+    { "id": 1, "name": "Nguyễn Văn A" }
+  ],
+  "comments": []
+}
