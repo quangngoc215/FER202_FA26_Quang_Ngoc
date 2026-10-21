@@ -7,13 +7,19 @@ const PostList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts', {
-        params: { userId: 1, _limit: 5 },   // → /posts?userId=1&_limit=5
-      })
-      .then(response => setPosts(response.data))
-      .catch(error => setError(error.message))
-      .finally(() => setLoading(false));
+    const fetchData = async () => {
+      try {
+        const res = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: { userId: 1, _limit: 5 }
+        });
+        setPosts(res.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
   if (loading) return <div>Loading...</div>;
