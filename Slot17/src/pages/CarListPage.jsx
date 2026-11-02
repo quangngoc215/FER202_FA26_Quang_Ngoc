@@ -134,14 +134,27 @@ export default function CarListPage() {
       {!loading && !error && (
         <>
           {/* TODO-07: dòng result-count + Alert "Không có mẫu xe phù hợp" khi visible rỗng (thay cho lưới) */}
-          <Row xs={1} sm={2} lg={4} className="g-3">
-            {visible.map((c) => (
-              <Col key={c.id}>
-                <CarCard car={c} onAddToCart={handleAddToCart} />
-              </Col>
-            ))}
-          </Row>
-        </>
+          <p data-testid="result-count">
+    Tìm thấy {visible.length}/{cars.length} mẫu xe
+  </p>
+
+  {visible.length === 0 ? (
+    <Alert variant="warning">
+      Không có mẫu xe phù hợp
+    </Alert>
+  ) : (
+    <Row xs={1} sm={2} lg={4} className="g-3">
+      {visible.map((c) => (
+        <Col key={c.id}>
+          <CarCard
+            car={c}
+            onAddToCart={handleAddToCart}
+          />
+        </Col>
+      ))}
+    </Row>
+  )}
+</>
       )}
     </>
   );
