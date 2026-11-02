@@ -80,6 +80,23 @@ export default function AppNavbar() {
           ) : (
             <div className="d-flex gap-2">
               {/* TODO-03: nút "Đăng nhập" (/login) và "Đăng ký" (/register) */}
+              <Button
+      as={Link}
+      to="/login"
+      variant="outline-light"
+      size="sm"
+    >
+      Đăng nhập
+    </Button>
+
+    <Button
+      as={Link}
+      to="/register"
+      variant="warning"
+      size="sm"
+    >
+      Đăng ký
+    </Button>
             </div>
           )}
         </Navbar.Collapse>
