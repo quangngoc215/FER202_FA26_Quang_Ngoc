@@ -24,6 +24,9 @@ export default function AppNavbar() {
 
   const handleLogout = () => {
     // TODO-02: logout() → showToast('Đã đăng xuất', 'info') → navigate('/')
+    logout();
+  showToast('Đã đăng xuất', 'info');
+  navigate('/');
   };
 
   return (
@@ -40,6 +43,17 @@ export default function AppNavbar() {
             </Nav.Link>
 
             {/* TODO-01: Nav.Link "Giỏ hàng" (/cart) + Badge data-testid="cart-badge" hiển thị totalQuantity */}
+            <Nav.Link as={NavLink} to="/cart">
+              Giỏ hàng{' '}
+               <Badge
+                bg="warning"
+                text="dark"
+                pill
+                data-testid="cart-badge"
+             >
+              {totalQuantity}
+              </Badge>
+            </Nav.Link>
 
             {isAdmin && (
               <NavDropdown title="Quản trị" id="admin-menu">
@@ -53,6 +67,15 @@ export default function AppNavbar() {
           {user ? (
             <div className="d-flex align-items-center gap-2 text-white">
               {/* TODO-02: "Xin chào, {user.fullName}" + nút "Đăng xuất" */}
+              <span>Xin chào, {user.fullName}</span>
+    <Button
+      variant="outline-light"
+      size="sm"
+      onClick={handleLogout}
+    >
+      Đăng xuất
+    </Button>
+              
             </div>
           ) : (
             <div className="d-flex gap-2">
