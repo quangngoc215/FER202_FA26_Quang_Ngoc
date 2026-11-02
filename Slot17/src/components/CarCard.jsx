@@ -69,7 +69,7 @@ export default function CarCard({ car, onAddToCart }) {
   )}
           {/* TODO-05: disabled={outOfStock}, chữ "Hết xe" khi outOfStock */}
           <Button className="w-100 mt-2" onClick={() => onAddToCart?.(car)}>
-            Thêm vào giỏ
+            {outOfStock ? 'Hết xe' : 'Thêm vào giỏ'}
           </Button>
         </div>
       </Card.Body>
